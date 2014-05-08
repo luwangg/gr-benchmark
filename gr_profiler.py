@@ -143,6 +143,8 @@ def main():
     parser.add_option("-b", "--disable-waveforms",
                       action="store_false", dest="dw", default=True,
                       help="disable Waveform benchmarks")
+    parser.add_option("-r", "--results-file",
+                      type=argparse.FileType('w'), default=sys.stdout)
     (options, args) = parser.parse_args();
 
     # run waveform measurements 
@@ -168,7 +170,7 @@ def main():
     ci = cpuinfo();
     kn = kversion();
     results = {"k":kn,"ci":ci, "perf":perf, "wfperf":wfperf, "vci":options.vci, "gci":options.gci, "grv":options.grv};
-    print "results: %s"%( results );
+    options.results_file.write( json.dumps(results) )
 
     #submit performance statistics
     if(options.submit):
