@@ -1,0 +1,29 @@
+{
+    "directory": "bm_scripts",
+    "tests": [
+    {
+	"module": "bm_trellis",
+	"testname": "siso_decoder_priori",
+	"nitems": 100000,
+	"iters": 50,
+        "kwargs": {
+        }
+    },
+    {
+	"module": "bm_trellis",
+	"testname": "viterbi_decoder",
+	"nitems": 100000,
+	"iters": 50,
+        "kwargs": {
+        }
+    },
+    {
+	"module": "bm_trellis",
+	"testname": "metrics",
+	"nitems": 100000,
+	"iters": 50,
+	"kwargs": {
+	}
+    }
+]
+}
